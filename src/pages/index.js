@@ -4,7 +4,7 @@ import Store from "../store"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
 import ImageReusable from "../components/imageReusable"
-import quickChatPic from "../images/quick-chat-main2.svg"
+import quickChatPic from "../images/quick-chat.svg"
 import styled from "styled-components"
 import "../components/styles.css"
 //import Layout from "../components/layout"
@@ -54,23 +54,27 @@ const Chat = props => {
         <SEO title="chat" />
         {/* <Layout> */}
         <div id="img-pic">
-          {/* <img src={quickChatPic} style={{ objectFit: "fit" }} /> */}
+          <div id="quick-chat">
+            <img
+              src={quickChatPic}
+              style={{ objectFit: "fit", marginTop: "1rem" }}
+            />
+          </div>
           <div id="sign-in">
-            <h1 style={{ margin: "0 1rem 1rem 1rem" }}>Login to Quick Chat</h1>
-            <p style={{ margin: "1rem" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto praesentium atque quod, soluta pariatur adipisci!
-              Perferendis, reprehenderit aliquam perspiciatis eum minus eveniet
-              vero facilis libero fugit quos asperiores dolorem. Doloremque.
+            <h4 style={{ margin: "0 1rem 1rem 1rem", color: "#fff" }}>
+              Login to Quick Chat
+            </h4>
+            <p style={{ margin: "1rem", color: "#fff" }}>
+              This is a space where you can quickly connect with friends and
+              talk.
             </p>
             <form style={{ margin: "1rem" }} onSubmit={nameHandler}>
               <div>
                 <div style={{ display: "block" }}>
-                  <div style={{ marginBottom: "1rem" }}>
-                    <span>*All items are required for login</span>
-                  </div>
                   <div>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name" style={{ color: "#fff" }}>
+                      Name
+                    </label>
                   </div>
                 </div>
                 <div>
@@ -87,7 +91,12 @@ const Chat = props => {
               <button
                 type="submit"
                 value="Submit"
-                style={{ marginTop: "1rem" }}
+                style={{
+                  marginTop: "1rem",
+                  border: "1px solid #fff",
+                  backgroundColor: "#AB4CB4",
+                  color: "#fff",
+                }}
               >
                 Submit Username
               </button>

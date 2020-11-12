@@ -12,3 +12,8 @@
   bottom: 0rem;
   left: 0rem;
 }
+
+#quick-chat {
+  display: flex;
+  justify-content: center;
+}
