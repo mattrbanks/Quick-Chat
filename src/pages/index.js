@@ -24,11 +24,20 @@ const Chat = props => {
 
   if (isLoggedIn === true) {
     return (
-      <div>
+      <div id="dash-main">
         <SEO title="chat" />
 
         <div>
-          <h1 style={{ margin: "1rem" }}>Welcome to Quick Chat.</h1>
+          <h1
+            style={{
+              margin: "0 1rem 1rem 1rem",
+              paddingTop: "1rem",
+              fontFamily: "'Rufina', serif",
+              textAlign: "center",
+            }}
+          >
+            Welcome to Quick Chat.
+          </h1>
           <p style={{ margin: "1rem" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
             quidem mollitia rerum. Quidem illo repellendus nostrum ullam aliquid
@@ -41,9 +50,16 @@ const Chat = props => {
           <Link
             to="/"
             onClick="window.location.reload()"
-            style={{ margin: "1rem" }}
+            style={{
+              margin: "1rem",
+              border: "1px solid #fff",
+              color: "#fff",
+              borderRadius: "50px",
+              padding: "0.5rem",
+              backgroundColor: "rgb(0, 0, 0, 0.8)",
+            }}
           >
-            BACK TO HOMEPAGE AND DISCONNECT
+            DISCONNECT
           </Link>
         </div>
       </div>
@@ -61,9 +77,9 @@ const Chat = props => {
             />
           </div>
           <div id="sign-in">
-            <h4 style={{ margin: "0 1rem 1rem 1rem", color: "#fff" }}>
+            <h3 style={{ margin: "0 1rem 1rem 1rem", color: "#fff" }}>
               Login to Quick Chat
-            </h4>
+            </h3>
             <p style={{ margin: "1rem", color: "#fff" }}>
               This is a space where you can quickly connect with friends and
               talk.
@@ -94,8 +110,10 @@ const Chat = props => {
                 style={{
                   marginTop: "1rem",
                   border: "1px solid #fff",
-                  backgroundColor: "#AB4CB4",
+                  borderRadius: "50px",
+                  backgroundColor: "rgb(171, 76, 180, 0.2)",
                   color: "#fff",
+                  cursor: "pointer",
                 }}
               >
                 Submit Username

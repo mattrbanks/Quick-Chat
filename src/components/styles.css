@@ -17,3 +17,9 @@
   display: flex;
   justify-content: center;
 }
+
+#dash-main {
+  /* background-color: #009696; */
+  background-image: url("../images/group-chat-pic.jpg");
+  height: 100vh;
+}

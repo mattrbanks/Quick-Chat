@@ -18,9 +18,12 @@ import ReactEmoji from "react-emoji"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: "1rem",
+    margin: "6rem 1rem 1rem 1rem",
     textAlign: "center",
     padding: theme.spacing(3, 2),
+    backgroundColor: "rgb(0, 0, 0, 0.8)",
+    color: "#f0f0f0",
+    fontFamily: "'Rufina', serif",
   },
   flex: {
     display: "flex",
@@ -219,6 +222,9 @@ const useStyles = makeStyles(theme => ({
   userListToggleStyles: {
     display: "none",
   },
+  texFieldColors: {
+    color: "white",
+  },
 }))
 
 const Dashboard = () => {
@@ -387,7 +393,6 @@ const Dashboard = () => {
 
   return (
     <Paper className={classes.root} elevation={3}>
-      <h2>Quick Chat</h2>
       <h5>{privChatActive !== null ? privChatActiveNoComma : activeTopic}</h5>
 
       <div
@@ -633,9 +638,7 @@ const Dashboard = () => {
                               }, 500)
                             }}
                           >
-                            <ListItemText
-                              primary={name[1][0] + name[1][1] + name[1][2]}
-                            />
+                            <ListItemText primary={name[1]} />
                           </ListItem>
                         ))}
                       </List>
@@ -732,6 +735,12 @@ const Dashboard = () => {
             id="outlined-basic"
             label="Send a private message"
             className={classes.chatBox}
+            InputProps={{
+              className: classes.texFieldColors,
+            }}
+            InputLabelProps={{
+              className: classes.texFieldColors,
+            }}
             value={textValue}
             onChange={e => changeTextValue(e.target.value)}
             variant="outlined"
@@ -742,6 +751,7 @@ const Dashboard = () => {
             className={classes.button}
             variant="contained"
             color="primary"
+            disabled={!textValue}
             onClick={() => {
               sendPrivateAction({
                 from: "",
@@ -766,6 +776,12 @@ const Dashboard = () => {
             id="outlined-basic"
             label="Send a message"
             className={classes.chatBox}
+            InputProps={{
+              className: classes.texFieldColors,
+            }}
+            InputLabelProps={{
+              className: classes.texFieldColors,
+            }}
             value={textValue}
             onChange={e => changeTextValue(e.target.value)}
             variant="outlined"
