@@ -21,5 +21,10 @@
 #dash-main {
   /* background-color: #009696; */
   background-image: url("../images/group-chat-pic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* the height and padding on the disconnect are mobile screen problems */
   height: 100vh;
+  position: relative;
 }
