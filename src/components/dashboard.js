@@ -22,8 +22,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     padding: theme.spacing(3, 2),
     backgroundColor: "rgb(0, 0, 0, 0.8)",
-    color: "#f0f0f0",
-    fontFamily: "'Rufina', serif",
+    color: "#fff",
+    fontFamily: "Rufina, serif", //no effect
   },
   flex: {
     display: "flex",
@@ -123,7 +123,7 @@ const useStyles = makeStyles(theme => ({
   },
   usersWindowMobileP: {
     width: "100%",
-    height: "16.9rem",
+    height: "17.05rem",
     borderLeft: "0.0625rem solid grey",
     borderBottom: "0.0625rem solid grey",
     overflow: "auto",
@@ -137,7 +137,7 @@ const useStyles = makeStyles(theme => ({
   usersWindowMobileL: {
     width: "100%",
     marginRight: "6rem",
-    height: "17rem",
+    height: "17.08rem",
     borderLeft: "0.0625rem solid grey",
     borderBottom: "0.0625rem solid grey",
     overflow: "auto",
@@ -223,7 +223,8 @@ const useStyles = makeStyles(theme => ({
     display: "none",
   },
   texFieldColors: {
-    color: "white",
+    color: "#fff !important",
+    borderColor: "#fff !important",
   },
 }))
 
@@ -469,6 +470,12 @@ const Dashboard = () => {
                   onClick={() => {
                     setUserListSwitch(!userListSwitch)
                   }}
+                  style={{
+                    border: "0.5px solid #000",
+                    borderRadius: "50px",
+                    outline: "0",
+                    cursor: "pointer",
+                  }}
                 >
                   <span
                     className={
@@ -599,6 +606,12 @@ const Dashboard = () => {
                   <button
                     onClick={() => {
                       setUserListSwitch(!userListSwitch)
+                    }}
+                    style={{
+                      border: "0.5px solid #000",
+                      borderRadius: "50px",
+                      outline: "0",
+                      cursor: "pointer",
                     }}
                   >
                     <span
@@ -736,10 +749,17 @@ const Dashboard = () => {
             label="Send a private message"
             className={classes.chatBox}
             InputProps={{
-              className: classes.texFieldColors,
+              classes: {
+                root: classes.texFieldColors,
+                focused: classes.texFieldColors,
+                notchedOutline: classes.texFieldColors,
+              },
             }}
             InputLabelProps={{
-              className: classes.texFieldColors,
+              classes: {
+                root: classes.texFieldColors,
+                focused: classes.texFieldColors,
+              },
             }}
             value={textValue}
             onChange={e => changeTextValue(e.target.value)}
@@ -777,10 +797,17 @@ const Dashboard = () => {
             label="Send a message"
             className={classes.chatBox}
             InputProps={{
-              className: classes.texFieldColors,
+              classes: {
+                root: classes.texFieldColors,
+                focused: classes.texFieldColors,
+                notchedOutline: classes.texFieldColors,
+              },
             }}
             InputLabelProps={{
-              className: classes.texFieldColors,
+              classes: {
+                root: classes.texFieldColors,
+                focused: classes.texFieldColors,
+              },
             }}
             value={textValue}
             onChange={e => changeTextValue(e.target.value)}

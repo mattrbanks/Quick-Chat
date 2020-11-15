@@ -7,6 +7,7 @@ import ImageReusable from "../components/imageReusable"
 import quickChatPic from "../images/quick-chat.svg"
 import styled from "styled-components"
 import "../components/styles.css"
+import { useTheme, useMediaQuery } from "@material-ui/core"
 //import Layout from "../components/layout"
 
 export let userName = []
@@ -22,9 +23,27 @@ const Chat = props => {
     setLoginBoolean(true)
   }
 
+  const theme = useTheme()
+
+  const mobileChatP = useMediaQuery(
+    `${theme.breakpoints.between("0", "500")} and (orientation: portrait)`
+  )
+
+  const mobileChatL = useMediaQuery(
+    `${theme.breakpoints.between("0", "900")} and (orientation: landscape)`
+  )
+
   if (isLoggedIn === true) {
     return (
-      <div id="dash-main">
+      <div
+        className={
+          mobileChatP
+            ? "dash-mobile"
+            : mobileChatL
+            ? "dash-mobile"
+            : "dash-main"
+        }
+      >
         <SEO title="chat" />
 
         <div>
@@ -32,7 +51,7 @@ const Chat = props => {
             style={{
               margin: "0 1rem 1rem 1rem",
               paddingTop: "1rem",
-              fontFamily: "'Rufina', serif",
+              fontFamily: "Rufina, serif",
               textAlign: "center",
             }}
           >
@@ -47,20 +66,22 @@ const Chat = props => {
           <Store>
             <Dashboard />
           </Store>
-          <Link
-            to="/"
-            onClick="window.location.reload()"
-            style={{
-              margin: "1rem",
-              border: "1px solid #fff",
-              color: "#fff",
-              borderRadius: "50px",
-              padding: "0.5rem",
-              backgroundColor: "rgb(0, 0, 0, 0.8)",
-            }}
-          >
-            DISCONNECT
-          </Link>
+          <div id="disconnect-btn">
+            <Link
+              to="/"
+              onClick="window.location.reload()"
+              style={{
+                margin: "1rem",
+                border: "1px solid #fff",
+                color: "#fff",
+                borderRadius: "50px",
+                padding: "0.5rem",
+                backgroundColor: "rgb(0, 0, 0, 0.8)",
+              }}
+            >
+              DISCONNECT
+            </Link>
+          </div>
         </div>
       </div>
     )
@@ -114,6 +135,7 @@ const Chat = props => {
                   backgroundColor: "rgb(171, 76, 180, 0.2)",
                   color: "#fff",
                   cursor: "pointer",
+                  outline: "0",
                 }}
               >
                 Submit Username

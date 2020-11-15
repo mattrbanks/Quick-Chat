@@ -1,3 +1,7 @@
+html {
+  font-family: "Rufina, serif";
+}
+
 #img-pic {
   background-image: url("../images/quick-chat-main4.svg");
   background-repeat: no-repeat;
@@ -18,8 +22,7 @@
   justify-content: center;
 }
 
-#dash-main {
-  /* background-color: #009696; */
+.dash-main {
   background-image: url("../images/group-chat-pic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,4 +30,17 @@
   /* the height and padding on the disconnect are mobile screen problems */
   height: 100vh;
   position: relative;
+}
+
+.dash-mobile {
+  background-image: url("../images/group-chat-pic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* the height and padding on the disconnect are mobile screen problems */
+  position: relative;
+}
+
+#disconnect-btn {
+  height: 5rem;
 }
