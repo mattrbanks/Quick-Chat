@@ -3,8 +3,8 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Eagle Elementary School`,
-    description: `This is a template elementary school site I created which targets progressive school environments becoming more socially distanced.`,
+    title: `Quick Chat`,
+    description: `This is a real-time chat web application that has group topic rooms and private messaging with push notifications.`,
     author: `Matthew R Banks`,
     image: `https://raw.githubusercontent.com/mattrbanks/school-site-chat-survey-portfolio-project/master/src/images/eagle-elementary-school.jpg`,
   },

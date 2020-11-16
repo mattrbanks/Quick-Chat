@@ -91,8 +91,8 @@ const Store = props => {
 
   // this is where socket changes before we even call the function above, when the socket is created.
   if (!socket) {
-    // socket = io("https://school-site-chat-survey-server.herokuapp.com/") //created client connection that connects when the client starts if no sockets are started. Added a heroku server. Used to be :3001.
-    socket = io(":3001")
+    socket = io("https://quick-chat--persistent-server.herokuapp.com/") //created client connection that connects when the client starts if no sockets are started. Added a heroku server. Used to be :3001.
+    //socket = io(":3001")
 
     const name = userName.toString()
     socket.emit("new-user", name) //kick name to server
@@ -110,8 +110,8 @@ const Store = props => {
 
     socket.on("private web push notification", msg => {
       fetch(
-        //"https://school-site-chat-survey-server.herokuapp.com/activeTopic",
-        ":3001",
+        "https://quick-chat--persistent-server.herokuapp.com/activeTopic",
+        //":3001",
         {
           method: "POST",
           headers: {
@@ -154,8 +154,8 @@ const Store = props => {
         topicHolder[0].topic === msg.topic
           ? console.log("Push Not Sent While Receiver Is In Room...")
           : await fetch(
-              //"https://school-site-chat-survey-server.herokuapp.com/subscribe",
-              ":3001",
+              "https://quick-chat--persistent-server.herokuapp.com/subscribe",
+              //":3001",
               {
                 method: "POST",
                 body: JSON.stringify(subscription),
