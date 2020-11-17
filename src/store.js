@@ -94,7 +94,7 @@ const Store = props => {
     socket = io("https://quick-chat--persistent-server.herokuapp.com/") //created client connection that connects when the client starts if no sockets are started. Added a heroku server. Used to be :3001.
     //socket = io(":3001")
 
-    const name = userName.toString()
+    const name = [userName.toString()]
     socket.emit("new-user", name) //kick name to server
 
     socket.on("chat message", msg => {
@@ -111,7 +111,7 @@ const Store = props => {
     socket.on("private web push notification", msg => {
       fetch(
         "https://quick-chat--persistent-server.herokuapp.com/activeTopic",
-        //":3001",
+        //"http://localhost:3001/activeTopic",
         {
           method: "POST",
           headers: {
@@ -155,7 +155,7 @@ const Store = props => {
           ? console.log("Push Not Sent While Receiver Is In Room...")
           : await fetch(
               "https://quick-chat--persistent-server.herokuapp.com/subscribe",
-              //":3001",
+              //"http://localhost:3001/subscribe",
               {
                 method: "POST",
                 body: JSON.stringify(subscription),
@@ -163,7 +163,9 @@ const Store = props => {
                   "content-type": "application/json",
                 },
               }
-            )
+            ).catch(error => {
+              console.error("Error:", error)
+            })
       }
 
       function urlBase64ToUint8Array(base64String) {

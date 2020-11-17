@@ -46,8 +46,7 @@ app.post("/subscribe", (req, res) => {
     title: "New Private Message",
     body: JSON.stringify(
       topicTemp[0].activeTopic.message.from[0] +
-        topicTemp[0].activeTopic.message.from[1] +
-        topicTemp[0].activeTopic.message.from[2]
+        topicTemp[0].activeTopic.message.from[1]
     ),
   })
 
@@ -66,8 +65,8 @@ app.post("/activeTopic", function(req, res) {
 
 io.on("connection", function(socket) {
   socket.on("new-user", name => {
-    users[socket.id] = name + "-" + socket.id.substr(0, 5)
-    //users[socket.id].push("-" + socket.id.substr(0, 5))
+    users[socket.id] = name
+    users[socket.id].push("-" + socket.id.substr(0, 5))
     usersMsg[socket.id] = name
 
     io.emit("new-user", Object.entries(users))
@@ -93,8 +92,8 @@ io.on("connection", function(socket) {
 
     let receiverSocket
     let tempRecNameArr = msg.topic.split(",")
-    let userOne = tempRecNameArr.slice(0, 3)
-    let userTwo = tempRecNameArr.slice(4)
+    let userOne = tempRecNameArr.slice(0, 2)
+    let userTwo = tempRecNameArr.slice(3)
     const entries = Object.entries(usersMsg)
     for (const [id, name] of entries) {
       if (

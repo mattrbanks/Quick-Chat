@@ -6,7 +6,7 @@ module.exports = {
     title: `Quick Chat`,
     description: `This is a real-time chat web application that has group topic rooms and private messaging with push notifications.`,
     author: `Matthew R Banks`,
-    image: `https://raw.githubusercontent.com/mattrbanks/school-site-chat-survey-portfolio-project/master/src/images/eagle-elementary-school.jpg`,
+    image: `https://github.com/mattrbanks/Quick-Chat/blob/master/src/images/quick-chat-meta.png?raw=true`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -58,7 +58,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        //icon: `src/images/cuteEagleCartoonSchool2.webp`, // This path is relative to the root of the site.
+        icon: `src/images/quick-chat-meta.png`, // This path is relative to the root of the site.
       },
     },
   ],
