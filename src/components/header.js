@@ -39,7 +39,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <p style={{ color: `black` }}>Soar To New Heights</p>
+      <p style={{ color: `black` }}>A space to talk with friends.</p>
     </div>
   </header>
 )
