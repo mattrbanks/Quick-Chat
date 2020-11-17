@@ -57,11 +57,9 @@ const Chat = props => {
           >
             Welcome to Quick Chat.
           </h1>
-          <p style={{ margin: "1rem" }}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-            quidem mollitia rerum. Quidem illo repellendus nostrum ullam aliquid
-            tempore dignissimos fugiat saepe fugit consectetur cum, deserunt ea
-            eaque consequatur at!
+          <p style={{ margin: "1rem", textAlign: "center" }}>
+            Click a users name to create a private chat room. If you are not in
+            the private room you will receive a notification.
           </p>
           <Store>
             <Dashboard />

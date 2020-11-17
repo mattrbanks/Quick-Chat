@@ -27,8 +27,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* the height and padding on the disconnect are mobile screen problems */
-  height: 100vh;
+  height: 55rem;
   position: relative;
 }
 
@@ -37,7 +36,6 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* the height and padding on the disconnect are mobile screen problems */
   position: relative;
 }
 
