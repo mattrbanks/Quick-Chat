@@ -8,7 +8,6 @@ import quickChatPic from "../images/quick-chat.svg"
 import styled from "styled-components"
 import "../components/styles.css"
 import { useTheme, useMediaQuery } from "@material-ui/core"
-//import Layout from "../components/layout"
 
 export let userName = []
 
@@ -57,10 +56,53 @@ const Chat = props => {
           >
             Welcome to Quick Chat.
           </h1>
-          <p style={{ margin: "1rem", textAlign: "center" }}>
-            Click a users name to create a private chat room. If you are not in
-            the private room you will receive a notification.
-          </p>
+          <div id="help-modal-id" className="no-help-modal">
+            <div className="modal-btn-close">
+              <button
+                onClick={function() {
+                  const modal = document.getElementById("help-modal-id")
+                  modal.classList.remove("animate-opacity")
+                  modal.classList.add("animate-opacity-close")
+                  setTimeout(function() {
+                    modal.style.display = "none"
+                  }, 700)
+                }}
+              >
+                X
+              </button>
+            </div>
+            <p style={{ margin: "1rem 2rem 1rem 2rem", textAlign: "center" }}>
+              In the left panel, you have a number of topic rooms you can click
+              on to enter. Once you click a topic, you will see the messages for
+              that topic in the middle (bottom for mobile) panel. On the right
+              panel, you will see all logged in users before you choose a topic.
+              Once you are in a topic room, the right panel will show who is
+              also in that room or all the users who are logged in. You just
+              need to click the button over the list to toggle the two lists.
+              You can click a user's name to create a private chat. This chat
+              can be found below the main topic room list under "Direct
+              Messages". Just click the newly created chat room that contains
+              your user name and the user you clicked on to enter a private chat
+              space for the two of you to talk. If you are in another private
+              chat or in a group chat then you will get a private message
+              notification. All panels can be scrolled independently. The emoji
+              below the message input box can be clicked for a menu with a large
+              selection of emojis and clicked again to close it.
+            </p>
+          </div>
+          <div className="modal-btn">
+            <button
+              id="btn-modal"
+              onClick={function() {
+                const modal = document.getElementById("help-modal-id")
+                modal.classList.remove("animate-opacity-close")
+                modal.classList.add("animate-opacity")
+                modal.style.display = "block"
+              }}
+            >
+              How To Use!
+            </button>
+          </div>
           <Store>
             <Dashboard />
           </Store>
@@ -87,7 +129,6 @@ const Chat = props => {
     return (
       <div>
         <SEO title="chat" />
-        {/* <Layout> */}
         <div id="img-pic">
           <div id="quick-chat">
             <img
@@ -140,7 +181,6 @@ const Chat = props => {
               </button>
             </form>
           </div>
-          {/* </Layout> */}
         </div>
       </div>
     )

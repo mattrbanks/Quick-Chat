@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 2),
     backgroundColor: "rgb(0, 0, 0, 0.8)",
     color: "#fff",
-    fontFamily: "Rufina, serif", //no effect
+    fontFamily: "Rufina, serif",
   },
   flex: {
     display: "flex",
@@ -857,6 +857,8 @@ const Dashboard = () => {
                   openEmojisMenu()
                 }}
               >
+                Click For Emojis
+                <br />
                 {String.fromCodePoint(0x1f60a)}
               </p>
             </React.Fragment>
@@ -867,6 +869,8 @@ const Dashboard = () => {
                 openEmojisMenu()
               }}
             >
+              Click For Emojis
+              <br />
               {String.fromCodePoint(0x1f60a)}
             </p>
           )
